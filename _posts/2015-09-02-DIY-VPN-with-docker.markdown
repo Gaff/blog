@@ -36,9 +36,7 @@ You can see the docker image running. Docker has assigned me the name "sharp_mes
 
 Before we can connect to this VPN we first need the config file. To do this we need to temporarily setup a web server on our docker box to give us the config file. This is built into the docker image so we don't have to think about it:
 
-```
-docker run --rm -t -i -p 8080:8080 --volumes-from sharp_mestorf jpetazzo/dockvpn serveconfig
-```
+    docker run --rm -t -i -p 8080:8080 --volumes-from sharp_mestorf jpetazzo/dockvpn serveconfig
 
 Note that "sharp_mestorf" should be replaced by whatever name docker gave your container!
 
@@ -48,9 +46,7 @@ To fetch the config open up a webbrowser and connect to your docker box's IP on 
 
 If you want to be a boss use wget :)
 
-```
-wget --no-check-certificate https://188.226.132.215:8080 -o myvpn.ovpn
-```
+    wget --no-check-certificate https://188.226.132.215:8080 -o myvpn.ovpn
 
 After you download the file you can stop the docker server process with control+C
 
