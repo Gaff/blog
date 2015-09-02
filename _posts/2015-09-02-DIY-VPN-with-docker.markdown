@@ -21,9 +21,7 @@ I'm using bithost, so the steps here are:
 
 Here is where the magic happens. Simply run this:
 
-```
-docker run -d --cap-add=NET_ADMIN -p 1194:1194/udp -p 443:443/tcp jpetazzo/dockvpn
-```
+    docker run -d --cap-add=NET_ADMIN -p 1194:1194/udp -p 443:443/tcp jpetazzo/dockvpn
 
 Docker will take about a minute to do its magic and then return you to the command line. To see that its working do this:
 
