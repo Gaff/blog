@@ -69,7 +69,7 @@ Congratulations! You now have your own personal VPN!!
 ## Foot notes
 
 
-A prudent user should also be concerned about security. The security of this setup is pretty tight since only the holder of the SSH key can connect to your docker box, and only the holder of the vpn config can connect to your vpn. Still there are some notes on the key setup here: (https://hub.docker.com/r/jpetazzo/dockvpn/). It's also worth noting that the server does keep some logs inside the docker image in /etc/openvpn - imited to information about who is connecting to the VPN, but still. It should be easy to tone down the logging with a little tweaking.
+A prudent user should also be concerned about security. The security of this setup is pretty tight since only the holder of the SSH key can connect to your docker box, and only the holder of the vpn config can connect to your vpn. Still there are some notes on the key setup here: (https://hub.docker.com/r/jpetazzo/dockvpn/). It's also worth noting that the server does keep some logs inside the docker image in /etc/openvpn - limited to information about who is connecting to the VPN, but still. It should be easy to tone down the logging with a little tweaking.
 
 Another thing to note is that this is a slightly hacky setup that's fine for a single user. If you wanted to support multiple users then you should check out [this docker image](https://github.com/kylemanna/docker-openvpn). It's setup to allow you to generate a separate key for each user etc etc but its slightly more complex to use. 
 
