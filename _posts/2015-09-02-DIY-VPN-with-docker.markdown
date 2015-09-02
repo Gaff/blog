@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Become your own VPN provide in 15 minutes with Docker"
+title:  "Become your own VPN provider in 15 minutes with Docker"
 date:   2015-09-02 13:44:47
 categories: VPN docker
 ---
