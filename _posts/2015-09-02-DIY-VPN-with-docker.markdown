@@ -7,7 +7,7 @@ categories: VPN docker
 
 It's VERY easy to setup your own VPN with docker. This guide assumes you're ok with operating a linux box but know nothing about docker. I'll break it down into 4 easy steps:
 
-## 1. Setup a host with docker
+## 1. Setup a docker host
 
 I'm using bithost, so the steps here are:
 
