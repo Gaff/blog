@@ -19,7 +19,7 @@ I've seen people use an executioner script that kills your browser if the tunnel
     sudo ufw allow out 1194/udp
     sudo ufo allow out on tun0
 
-(If at any point your internet stops working you can do ```sudo ufo reset``` to get you out of the mess.)
+(If at any point your internet stops working you can do ```sudo ufw reset``` to get you out of the mess.)
 
 Let's break this down. ```ufw enable``` switches ufw on, simple enough.
 
