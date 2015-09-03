@@ -17,7 +17,7 @@ I've seen people use an executioner script that kills your browser if the tunnel
     sudo ufw reject outgoing
     sudo ufw allow out 53/udp
     sudo ufw allow out 1194/udp
-    sudo ufo allow out on tun0
+    sudo ufw allow out on tun0
 
 (If at any point your internet stops working you can do ```sudo ufw reset``` to get you out of the mess.)
 
@@ -25,12 +25,12 @@ Let's break this down. ```ufw enable``` switches ufw on, simple enough.
 
 ```ufw reject outgoing``` says you want to stop ALL outgoing traffic by default. After this we need to add some exceptions to this default rule...
 
-```ufo allow out on 53/udp``` is to allow DNS traffic (DNS uses port 53). This isn't strictly necessary but some VPN providers don't route DNS requests through the VPN. (Paranoid people might want to ensure they pick a provider that does tunnel DNS?).
+```ufw allow out on 53/udp``` is to allow DNS traffic (DNS uses port 53). This isn't strictly necessary but some VPN providers don't route DNS requests through the VPN. (Paranoid people might want to ensure they pick a provider that does tunnel DNS?).
 
 
-```ufo allow out on 1194/udp``` is to allow openVPN to connect on its regular UDP port - this is the one thing that is permitted to use your regular internet connection.
+```ufw allow out on 1194/udp``` is to allow openVPN to connect on its regular UDP port - this is the one thing that is permitted to use your regular internet connection.
 
-```udo allow out on tun0``` this final command is to allow any data going through the tunnel.
+```ufw allow out on tun0``` this final command is to allow any data going through the tunnel.
 
 Once everything is working you should be able to verify it like so:
 
