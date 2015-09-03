@@ -40,7 +40,7 @@ Before we can connect to this VPN we first need the config file. To do this we n
 
 Note that "sharp_mestorf" should be replaced by whatever name docker gave your container!
 
-This time I'm running docker in interactive mode, and I've added "--rm" so the container is destroyed as soon as we stop the job. I onlu need to run the server for long enough to download the config file. After that I want to stop the server so that nobody else can get the config.
+This time I'm running docker in interactive mode, and I've added "--rm" so the container is destroyed as soon as we stop the job. I only need to run the server for long enough to download the config file. After that I want to stop the server so that nobody else can get the config.
 
 To fetch the config open up a webbrowser and connect to your docker box's IP on port 8080. You'll likely get some security errors because this is being served over HTTPS without the correct certificates. It's safe to ignore these errors. You probably want to save it as "myvpn.ovpn" or similar.
 
@@ -64,6 +64,8 @@ Congratulations! You now have your own personal VPN!!
 
 
 A prudent user should also be concerned about security. The security of this setup is pretty tight since only the holder of the SSH key can connect to your docker box, and only the holder of the vpn config can connect to your vpn. Still there are some notes on the key setup here: (https://hub.docker.com/r/jpetazzo/dockvpn/). It's also worth noting that the server does keep some logs inside the docker image in /etc/openvpn - limited to information about who is connecting to the VPN, but still. It should be easy to tone down the logging with a little tweaking.
+
+One nice property of this setup is you have complete control over the port assignments. Running over port 80 should be no hassle.
 
 Another thing to note is that this is a slightly hacky setup that's fine for a single user. If you wanted to support multiple users then you should check out [this docker image](https://github.com/kylemanna/docker-openvpn). It's setup to allow you to generate a separate key for each user etc etc but its slightly more complex to use. 
 
