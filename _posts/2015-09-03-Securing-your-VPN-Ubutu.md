@@ -49,7 +49,7 @@ Once everything is working you should be able to verify it like so:
     1194/udp (v6)              ALLOW OUT   Anywhere (v6)
     Anywhere (v6)              ALLOW OUT   Anywhere (v6) on tun0
 
-There you have it! Traffic is only allowed through the VPN tunnel except DNS and the tunnel itself!
+There you have it! Traffic is only allowed through the VPN tunnel except DNS and the tunnel itself! You can test this by killing the tunnel and check that you can't load any webpages etc.
 
 You could make this tighter, for example by allowing DNS / Tunnel traffic to specific hosts, or by tunneling the DNS requests. Check the UFW man pages.
 
