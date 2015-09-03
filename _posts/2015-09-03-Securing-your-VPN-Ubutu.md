@@ -28,7 +28,7 @@ Let's break this down. ```ufw enable``` switches ufw on, simple enough.
 ```ufo allow out on 53/udp``` is to allow DNS traffic (DNS uses port 53). This isn't strictly necessary but some VPN providers don't route DNS requests through the VPN. (Paranoid people might want to ensure they pick a provider that does tunnel DNS?).
 
 
-```ufo allow out on 1194/udp``` is to allow openVPN to connect over the regular connection - this is the one thing that is permitted.
+```ufo allow out on 1194/udp``` is to allow openVPN to connect on its regular UDP port - this is the one thing that is permitted to use your regular internet connection.
 
 ```udo allow out on tun0``` this final command is to allow any data going through the tunnel.
 
