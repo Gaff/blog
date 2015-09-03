@@ -23,9 +23,9 @@ If at any point your internet stops working you can do ```sudo ufo reset``` to g
 
 Let's break this down. ```ufw enable``` switches ufw on, simple enough.
 
-```ufw reject outgoing``` says you want to stop ALL outgoing traffic.
+```ufw reject outgoing``` says you want to stop ALL outgoing traffic by default. After this we need to add some exceptions to this default rule...
 
-```ufo allow out on 53/udp``` is to enable DNS. This isn't strictly necessary but some VPN providers don't route DNS requests through the VPN. (Paranoid people might want to ensure they pick a provider that does tunnel DNS?).
+```ufo allow out on 53/udp``` is to allow DNS traffic (DNS uses port 53). This isn't strictly necessary but some VPN providers don't route DNS requests through the VPN. (Paranoid people might want to ensure they pick a provider that does tunnel DNS?).
 
 
 ```ufo allow out on 1194/udp``` is to allow openVPN to connect over the regular connection - this is the one thing that is permitted.
