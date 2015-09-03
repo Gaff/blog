@@ -14,7 +14,7 @@ The problem is by default your computer now has two routes to the internet. The 
 I've seen people use an executioner script that kills your browser if the tunnel cuts out. However a better solution would be a firewall. Ubuntu has a very simple one called [ufw](https://help.ubuntu.com/community/UFW) - Uncomplicated Firewall. And it's really not very complicated. Here's what you need to do:
 
     sudo ufw enable
-    sudo ufw reject outgoing
+    sudo ufw default reject outgoing
     sudo ufw allow out 53/udp
     sudo ufw allow out 1194/udp
     sudo ufw allow out on tun0
@@ -23,7 +23,7 @@ I've seen people use an executioner script that kills your browser if the tunnel
 
 Let's break this down. ```ufw enable``` switches ufw on, simple enough.
 
-```ufw reject outgoing``` says you want to stop ALL outgoing traffic by default. After this we need to add some exceptions to this default rule...
+```ufw default reject outgoing``` says you want to stop ALL outgoing traffic by default. After this we need to add some exceptions to this default rule...
 
 ```ufw allow out on 53/udp``` is to allow DNS traffic (DNS uses port 53). This isn't strictly necessary but some VPN providers don't route DNS requests through the VPN. (Paranoid people might want to ensure they pick a provider that does tunnel DNS?).
 
