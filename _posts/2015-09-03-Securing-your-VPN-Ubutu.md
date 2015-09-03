@@ -11,7 +11,7 @@ The problem is by default your computer now has two routes to the internet. The 
 
 ## What can I do to prevent this?
 
-You need a firewall. Ubuntu has a very simple one called [ufw](https://help.ubuntu.com/community/UFW) - Uncomplicated Firewall. And it's really not very complicated. Here's what you need to do:
+I've seen people use an executioner script that kills your browser if the tunnel cuts out. However a better solution would be a firewall. Ubuntu has a very simple one called [ufw](https://help.ubuntu.com/community/UFW) - Uncomplicated Firewall. And it's really not very complicated. Here's what you need to do:
 
     sudo ufw enable
     sudo ufw deny outgoing
