@@ -7,7 +7,7 @@ categories: VPN ubuntu ufw
 
 ## So I've installed my VPN and it's working just fine - what's the problem?
 
-The problem is by default your computer now has two routes to the internet. The regular network and the VPN. While it prefers the VPN there's nothing to prevent it using the regulr route should the VPN cut out for any reason. You won't even know it's happening as most OSs like to hide these low level details from you.
+The problem is by default your computer now has two routes to the internet. The regular network and the VPN. While it prefers the VPN there's nothing to prevent it using the regular route should the VPN cut out for any reason. You won't even know it's happening as most OSs like to hide these low level details from you.
 
 ## What can I do to prevent this?
 
@@ -28,7 +28,7 @@ Let's break this down. ```ufw enable``` switches ufw on, simple enough.
 ```ufw allow out on 53/udp``` is to allow DNS traffic (DNS uses port 53). This isn't strictly necessary but some VPN providers don't route DNS requests through the VPN. (Paranoid people might want to ensure they pick a provider that does tunnel DNS?).
 
 
-```ufw allow out on 1194/udp``` is to allow openVPN to connect on its regular UDP port - this is the one thing that is permitted to use your regular internet connection.
+```ufw allow out on 1194/udp``` is to allow openVPN to connect on its regular UDP port - this is the one thing that is permitted to use your regular internet connection. Note that your vpn might be on a different port - you can find the details inside your .ovpn config file.
 
 ```ufw allow out on tun0``` this final command is to allow any data going through the tunnel.
 
