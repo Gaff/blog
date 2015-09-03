@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   My basic blog that covers some pracitcal privacy topics. VPNs, PGP, Docker, and whatever takes my fancy really.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://blog.pgp.help" # the base hostname & protocol for your site
-twitter_username: pgp_help
+twitter_username: pgphelp
 
 # Build settings
 markdown: kramdown
