@@ -14,7 +14,7 @@ The problem is by default your computer now has two routes to the internet. The 
 I've seen people use an executioner script that kills your browser if the tunnel cuts out. However a better solution would be a firewall. Ubuntu has a very simple one called [ufw](https://help.ubuntu.com/community/UFW) - Uncomplicated Firewall. And it's really not very complicated. Here's what you need to do:
 
     sudo ufw enable
-    sudo ufw deny outgoing
+    sudo ufw reject outgoing
     sudo ufw allow out 53/udp
     sudo ufw allow out 1194/udp
     sudo ufo allow out on tun0
