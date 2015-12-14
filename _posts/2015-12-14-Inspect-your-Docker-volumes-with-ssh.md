@@ -13,9 +13,7 @@ What you can do is setup a sshd server that shares the volumes. This should be s
 
 To make life simpler I've created an image that allows you to set the ssh key from the envornment, this making it dead simple to run:
 
-```
-docker run --rm -it -p 2222:22 --volumes-from my_other_image -e AUTHORIZED_KEY="`cat id_rsa.pub`" gaff/alpine-sshd
-```
+    docker run --rm -it -p 2222:22 --volumes-from my_other_image -e AUTHORIZED_KEY="`cat id_rsa.pub`" gaff/alpine-sshd
 
 Now you should be able to ssh in and look at your volumes. Simple :)
 
