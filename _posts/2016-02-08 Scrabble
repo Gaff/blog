@@ -1,3 +1,47 @@
+public class KFull{static int r,i,x,y,l,p,q,j;
+	static void reset() {
+		r=i=x=y=p=q=l=j=0;
+	}
+
+	static int row, length, position;
+	static int multiplier, letters;
+	static int min, max;
+
+
+	private static void test3(int r2, int r3) {
+		min = r2;
+		max = r3;
+	}
+
+	private static void test2(int x2, int y2) {
+		multiplier = x2;
+		letters = y2;
+	}
+
+public static void main(String[]C){
+	C=(C[0]).split(";");
+		C[1].chars().forEach(c->{c-=48;r=c<0?i:r;i=c<0?0:i*10+c;});
+		if(C[2].charAt(0)<'v'){x=r;r=i;i=x;}
+					
+		x=1;
+		l=C[0].length()/2;
+		i+=16*Math.abs(r-8);		
+		"!3ER5KE%EUMMM}jj5REBER%EZJMM:3EK53".chars().forEach(c->{
+			if(i<=0&&i>=-l){x*=c&3;y+=c&4;}
+			i-=c/17;
+		});
+		for(;++j<3;x=-x){
+			i=0;p=q;
+			q=C[0].chars().filter(c->c>45).map(c->("BDDCBECEBIFBDBBDKBBBBEEIEKAAAAA".charAt(c-65)-65)*x).peek(c->i+=c).sorted().limit(y/4).sum()*(r%4==2?2:1)+i;
+			};       			       
+		System.out.println(-q+";"+p);
+
+		test2(x,y);
+		test3(-q,p);
+		reset();
+	}
+}
+
 public class K{static String[]C;int r,i,j,x,y;public static void main(String[]a){C=(a[0]).split(";");new K();}
 K(){C[1].chars().forEach(c->{c-=48;r=c<0?i:r;i=c<0?0:i*10+c;});if(C[2].charAt(0)<'v'){x=r;r=i;i=x;}x=1;i+=16*Math.abs(r-8);
 "!3ER5KE%EUMMM}jj5REBER%EZJMM:3EK53".chars().forEach(c->{if (j>=i&&j<=i+C[0].length()/2){x*=c&3;y+=c&4;}j+=c/17;});System.out.printf("%d;%d\n",-g(),g());}
